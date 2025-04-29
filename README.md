@@ -93,6 +93,15 @@ Overview of how average battery capacity, screen size, ram and price(USD) has ch
     ORDER BY Company_Name;
 
 
+Average price of mobile phones for each company in USD:
+
+    SELECT Company_Name, AVG(Launched_Price_USD) as Avg_price_USD
+    FROM mobiles
+    GROUP BY Company_Name
+    ORDER BY Avg_price_USD DESC;
+
+
+
 Ranking the top 3 most expensive phones for each company(USD):
 
     With RankedMobiles AS (
@@ -109,13 +118,16 @@ Ranking the top 3 most expensive phones for each company(USD):
 ### Results/Findings
 
 After careful analysis, the results are as follows:
-1. Store 20 has the highest sales amount of $301,397,792.46 while Store 33 has the lowest sales amount of $37,160,221.96.
-2. Sales revenue has been slowly rising over the past 3 years, with sales peaking around December each year. This increase in sales is likely due to the holiday season where people are busy shopping for Christmas
-   goods and decorations.
-3. Average CPI and fuel prices have been gradually increasing over time, with fuel prices increasing significantly from 2010 to 2011.
-4. There is no significant correlation between fuel prices and sales revenue.
-5. Average sales are at their highest during holiday seasons regardless of CPI or fuel prices.
-6. Average sales are the lowest when the temperature is hot(>25 degrees) while sales are the highest when the temperature is moderate(between 0 degrees and 25 degrees).
+1. The RAM for all models averages around 7.78GB, with the most common RAM being around 8GB, minimum being 1GB and maximum being 8GB. 
+2. The weight for all models averages at 228.30g with the most common weight being 190g, minimum being 135g and maximum being 732g.
+3. The screen size for all models averages around 7.08 inches with the most common size being 6.7 inches, minimum being 5 inches and maximum being 14.6 inches
+4. The battery capacity for all models averages around 5027 mAh with the most common capacity being 5000 mAh, minimum being 2000 mAh and maximum being 11200 mAh.
+5. Oppo has the most number of models at 115 total models, followed by Apple at 97 and Honor at 91.
+6. iQOO has the least number of models at 3.
+7. On average, battery capacity, screen size and ram are generally increasing over the years with strong upward trends while prices are showing an upward trend from $169 in 2014 to a peak of $850 in 2022 and dipping to a price of $429 in 2025.
+8. Nokia has the highest average price of mobile phones at $3760 followed by Sony at $1132 and Huawei at $1112.
+9. Infinix has the lowest average price of mobile phones at $245.
+10. 
   
 
 
