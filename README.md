@@ -17,7 +17,9 @@
 
 
 ### Project Overview
-This data analysis project aims to 
+
+This data analysis project aims to analyze how mobile features such as camera quality, RAM, battery capacity and weight can affect pricing. By uncovering the relationship between these features, we can not only help companies 
+optimize their pricing strategy but also assist consumers in making more informed decisons based on product specifications.
 
 
 
@@ -26,7 +28,7 @@ This data analysis project aims to
 
 ### Data Sources
 
-The primary dataset used for this analysis is the "Mobiles_Dataset(2025).csv" file, containing         . This dataset is downloaded from Kaggle.
+The primary dataset used for this analysis is the "Mobiles_Dataset(2025).csv" file, containing mobile models for various companies along with their features. This dataset is downloaded from Kaggle.
 
 
 ### Tools
@@ -42,20 +44,63 @@ The primary dataset used for this analysis is the "Mobiles_Dataset(2025).csv" fi
 
 In the data preparation phase of the project, we performed the following tasks:
 1.  Data loading and inspection (in SQL server)
-2.  Handling of missing values from the dataset and checking for any inconsistencies
-3.  Data cleaning and formatting (adding new temperature column and populating it with new values)
+2.  Handling of missing values from the dataset and checking for any inconsistencies (removing non-numeric values from currency column)
+3.  Data cleaning and formatting (changing column type and value)
 
 ### Exploratory Data Analysis
 
-EDA is used to summarize the sales data and allows us gain a deeper understanding of the dataset. It answers key questions such as:
--  What is the total number of distinct stores?
--  What is the total sales for each store?
--  Which store performed the best and which store performed the worst?
--  What is the average weekly sales during holiday periods and non-holiday periods?
--  What are the peak sales periods for each year?
+EDA is used to summarize the sales data and allows us to gain insights into the dataset. It answers key questions such as:
+-  What is the average screen size, ram, battery capacity and weight?
+-  What is the most common screen size, ram, battery capacity and weight?
+-  Which company releases the most amount of models per year and which company releases the least?
+-  Which company has the most expensive mobile model and which company has the cheapest model?
+-  Is there a correlation between mobile weight/RAM/Screen size and price?
+-  Are mobile prices increasing over time?
+-  Which company produces the best value for money phones?
+-  How have mobile features evolved over the years?
+
 
 
 ### Data Analysis
+
+List of phones with the highest battery capacity vs the lowest battery capacity compared to the average battery capacity:
+
+    SELECT Company_Name, Model_Name, Battery_Capacity_mAh, 
+           (SELECT AVG(Battery_Capacity_mAh) FROM mobiles) AS Avg_capacity
+    FROM mobiles
+    WHERE Battery_Capacity_mAh = (SELECT MAX(Battery_Capacity_mAh) FROM mobiles) 
+          OR
+          Battery_Capacity_mAh = (SELECT MIN(Battery_Capacity_mAh) FROM mobiles);
+          
+
+List of phones with the largest RAM Together with phones having the largest screen_size:
+
+    SELECT Company_Name, Model_Name, RAM_GB, Screen_Size_inch, 'Largest RAM' as TYPE
+    FROM mobiles
+    WHERE RAM_GB = (SELECT MAX(RAM_GB) FROM mobiles)
+    UNION ALL
+    SELECT Company_Name, Model_Name, RAM_GB, Screen_Size_inch, 'Largest Screen' as TYPE
+    FROM mobiles
+    WHERE Screen_Size_inch = (SELECT MAX(Screen_Size_inch) FROM mobiles)
+
+
+Overview of how average battery capacity, screen size, ram and price(USD) has changed over the years for each company:
+
+    SELECT Company_Name, AVG(Battery_Capacity_mAh) as avg_capacity_mAh, ROUND(AVG(Screen_Size_inch),2) as avg_screen_size_inch, 
+    	     ROUND(AVG(RAM_GB),2) as avg_ram_gb, FORMAT(AVG(Launched_Price_USD),'N2') as avg_price_usd, Launched_Year
+    FROM mobiles
+    GROUP BY Company_Name, Launched_Year
+    ORDER BY Company_Name;
+
+
+Ranking the top 3 most expensive phones for each company(USD):
+
+    With RankedMobiles AS (
+    SELECT Company_Name, Model_Name, Launched_Price_USD, Launched_Year, 
+    	   DENSE_RANK() OVER (PARTITION BY Company_Name ORDER BY Launched_Price_USD DESC) AS Ranking
+    FROM mobiles )
+    SELECT * FROM RankedMobiles 
+    WHERE Ranking < 4
 
 
 
