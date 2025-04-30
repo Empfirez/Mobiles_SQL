@@ -54,7 +54,7 @@ EDA is used to summarize the sales data and allows us to gain insights into the 
 -  What is the most common screen size, ram, battery capacity and weight?
 -  Which company releases the most amount of models per year and which company releases the least?
 -  Which company has the most expensive mobile model and which company has the cheapest model?
--  Is there a correlation between mobile weight/RAM/Screen size and price?
+-  Is there a correlation between mobile weight/RAM/Screen size/battery capacity and price?
 -  Are mobile prices increasing over time?
 -  Which company produces the best value for money phones?
 -  How have mobile features evolved over the years?
@@ -118,35 +118,41 @@ Ranking the top 3 most expensive phones for each company(USD):
 ### Results/Findings
 
 After careful analysis, the results are as follows:
-1. The RAM for all models averages around 7.78GB, with the most common RAM being around 8GB, minimum being 1GB and maximum being 8GB. 
-2. The weight for all models averages at 228.30g with the most common weight being 190g, minimum being 135g and maximum being 732g.
-3. The screen size for all models averages around 7.08 inches with the most common size being 6.7 inches, minimum being 5 inches and maximum being 14.6 inches
-4. The battery capacity for all models averages around 5027 mAh with the most common capacity being 5000 mAh, minimum being 2000 mAh and maximum being 11200 mAh.
-5. Oppo has the most number of models at 115 total models, followed by Apple at 97 and Honor at 91.
-6. iQOO has the least number of models at 3.
-7. On average, battery capacity, screen size and ram are generally increasing over the years with strong upward trends while prices are showing an upward trend from $169 in 2014 to a peak of $850 in 2022 and dipping to a price of $429 in 2025.
-8. Nokia has the highest average price of mobile phones at $3760 followed by Sony at $1132 and Huawei at $1112.
-9. Infinix has the lowest average price of mobile phones at $245.
-10. 
-  
+1.  The RAM for all models averages around 7.78GB, with the most common RAM being around 8GB, minimum being 1GB and maximum being 8GB. 
+2.  The weight for all models averages at 228.30g with the most common weight being 190g, minimum being 135g and maximum being 732g.
+3.  The screen size for all models averages around 7.08 inches with the most common size being 6.7 inches, minimum being 5 inches and maximum being 14.6 inches.
+4.  The battery capacity for all models averages around 5027 mAh with the most common capacity being 5000 mAh, minimum being 2000 mAh and maximum being 11200 mAh.
+5.  The most common front camera quality is 16MP and the most common back camera quality is 50MP.
+6.  There is a weak positive correlation between screen size and weight on price while RAM strongly correlates with price. 
+7.  There is no strong positive correlation between battery capacity and price, suggesting other factors determine price instead.
+8.  Oppo has the most number of models at 115 total models, followed by Apple at 97 and Honor at 91.
+9.  iQOO has the least number of models at 3.
+10. On average, battery capacity, screen size and ram are generally increasing over the years with strong upward trends while prices are showing an upward trend from $169 in 2014 to a peak of $850 in 2022 and dipping to $429 in 2025.
+11. Nokia has the highest average price of mobile phones at $3760 followed by Sony at $1132 and Huawei at $1112. Nokia also has a significant outlier of $39622 USD which could be a data entry issue.
+12. Infinix has the lowest average price of mobile phones at $245.
+    
 
+    
+  
 
 ### Recommendations
 
-Based on analysis above, here are some recommended actions to take in order to increase sales revenue:
-1. Offering special promotions during peak seasons to maximise revenue and attract more customers.
-2. Analyzing the differences between Store 20 and Store 33 to figure out the reasons behind the large discrepancy in sales. For instance promotions, propduct placement, store environment, customer service, location.
-3. As sales drop during hotter days, Walmart can run targeted promotions on specific products such as beverages, cooling applicances and swimwear.
-4. During hotter days where customers are reluctant to shop in physical stores, Walmart can increase sales by offering discount vouchers whenever consumers shop online. 
-5. As sales are the highest in moderate temperatures, more emphasis should be placed on outdoor products such as gardening tools, sports apparel as well as sports equipment. Beauty products may also see a rise in sales
-   as people tend to repair their damaged skin and hair after cold periods.
-6. Since CPI and fuel prices do not affect sales significantly, Walmart should focus on their customer service and increasing customer satisfaction so as to build a more loyal consumer base.  
-
+Based on the analysis above, here are some recommended actions to take:
+1. Since RAM affects price the most, companies should strategize their RAM offerings to optimize cost and be more price competitive.
+2. As screen size and weight has a slight impact on price, companies should focus on optimal size and weight ranges for common models while offering larger screens for higher end products.
+3. 
 
 
 
 ### Limitations
 
-- Converted fuel_price and CPI column to 2 decimal places for easier analysis and readability.
-- Created a new column for temperature called temperature_celcius as the original temperature column was recorded in Kelvin. The newly created column was then populated with values in Celcius after conversion.
+- 
+
+
+
+![image](https://github.com/user-attachments/assets/3e1b9b32-d139-480c-99f5-811da380a723)
+
+
+
+
   
