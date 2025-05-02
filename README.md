@@ -22,7 +22,7 @@ This data analysis project aims to analyze how mobile features such as camera qu
 optimize their pricing strategy but also assist consumers in making more informed decisons based on product specifications.
 
 
-
+![image](https://github.com/user-attachments/assets/3e1b9b32-d139-480c-99f5-811da380a723)
 
 
 
@@ -128,7 +128,7 @@ After careful analysis, the results are as follows:
 8.  Oppo has the most number of models at 115 total models, followed by Apple at 97 and Honor at 91.
 9.  iQOO has the least number of models at 3.
 10. On average, battery capacity, screen size and ram are generally increasing over the years with strong upward trends while prices are showing an upward trend from $169 in 2014 to a peak of $850 in 2022 and dipping to $429 in 2025.
-11. Nokia has the highest average price of mobile phones at $3760 followed by Sony at $1132 and Huawei at $1112. Nokia also has a significant outlier of $39622 USD which could be a data entry issue.
+11. Sony has the highest average price of mobile phones at $1132, followed by Huawei at $1112 and Apple at $1028.
 12. Infinix has the lowest average price of mobile phones at $245.
     
 
@@ -139,18 +139,26 @@ After careful analysis, the results are as follows:
 
 Based on the analysis above, here are some recommended actions to take:
 1. Since RAM affects price the most, companies should strategize their RAM offerings to optimize cost and be more price competitive.
-2. As screen size and weight has a slight impact on price, companies should focus on optimal size and weight ranges for common models while offering larger screens for higher end products.
-3. 
+2. As screen size and weight has a slight positive impact on price, companies should focus on optimal size and weight ranges for common models while offering larger screens for higher end products.
+3. Companies like Oppo, Apple and Honor dominate the market in terms of the number of models released, indicating that they are targetting multiple customer segments from budget to premium users.Brands like iQOO could try to capture a larger
+   market share by expanding their product line to appeal to a wider audience.
+4. Brands like Sony, Huawei and Apple have high average prices for their mobile phones, meaning that they mostly target the medium-high income groups. Therefore, such companies should differentiate themselves from more budget-friendly brands by
+   investing in premium features such as larger screen sizes, larger RAM and higher quality cameras to justify the higher cost.
+5. On the other hand, brands such as Infinix and Nokia focus on affordable prices which appeals to first-time users or price sensitive users. Thus, instead of having excessive RAM or large screen sizes, these companies should prioritize larger
+   battery capacities as well as durability while not forsaking performance in the process. Durability and affordability should be the main selling points for these companies.
+   
+
 
 
 
 ### Limitations
 
-- 
+- I had to remove one particular model from Nokia due to it having an exceedingly large value of $39622(USD), making it an extreme outlier. Upon removing the model and calculating the average value again, it was discovered that the
+  average price had dropped significantly to $174, which aligns more closely to Nokia's budget-friendly brand. This indicates that the value of $39622 could be an error during data entry as it does not fall in line with the average pricing pattern of other models.
+  Having such an extreme outlier heavily skews the average price of Nokia which can lead to misleading intepretations during analysis. 
 
 
 
-![image](https://github.com/user-attachments/assets/3e1b9b32-d139-480c-99f5-811da380a723)
 
 
 
