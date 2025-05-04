@@ -24,6 +24,7 @@ optimize their pricing strategy but also assist consumers in making more informe
 
 ![image](https://github.com/user-attachments/assets/3e1b9b32-d139-480c-99f5-811da380a723)
 
+![image](https://github.com/user-attachments/assets/c0942ea0-7aea-49f0-9fc4-6076c268784c)
 
 
 ### Data Sources
